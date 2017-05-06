@@ -39,6 +39,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		926869021EBE732300713413 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		926869031EBE732800713413 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9239101EBCFA2A005EA051 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		EC9239021EBCFA29005EA051 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				EC9239221EBD1E3C005EA051 /* Model */,
+				926869021EBE732300713413 /* View */,
+				926869031EBE732800713413 /* Controller */,
 				EC92390E1EBCFA2A005EA051 /* AppDelegate.swift */,
-				EC9239101EBCFA2A005EA051 /* ViewController.swift */,
 				EC9239121EBCFA2A005EA051 /* Main.storyboard */,
 				EC9239151EBCFA2A005EA051 /* Assets.xcassets */,
 				EC9239201EBCFD72005EA051 /* pokemon.csv */,
@@ -318,6 +334,7 @@
 				EC92391F1EBCFA2A005EA051 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
