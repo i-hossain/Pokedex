@@ -17,13 +17,13 @@ class Pokemon {
         return _name
     }
     
-    var pokemonID: Int {
+    var pokedexID: Int {
         return _pokedexID
     }
     
-    init(name: String, pokemonID: Int) {
+    init(name: String, pokedexID: Int) {
         self._name = name
-        self._pokedexID = pokemonID
+        self._pokedexID = pokedexID
     }
     
 }
