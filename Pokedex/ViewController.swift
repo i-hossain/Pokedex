@@ -57,9 +57,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             for row in rows {
                 
-                let pokeName = row["identifier"]
-                let pokeID = Int(row["id"]!)
-                let pokemonObj = Pokemon(name: pokeName!, pokedexID: pokeID!)
+                let pokemonName = row["identifier"]
+                let pokemonID = Int(row["id"]!)
+                let pokemonObj = Pokemon(name: pokemonName!, pokedexID: pokemonID!)
                 pokemon.append(pokemonObj)
             }
         } catch let error as NSError {
