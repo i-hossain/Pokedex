@@ -187,7 +187,7 @@
                                 <rect key="frame" x="16" y="109" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KJn-g1-7Bk">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KJn-g1-7Bk">
                                 <rect key="frame" x="16" y="73" width="343" height="29"/>
                                 <segments>
                                     <segment title="Bio"/>
@@ -286,26 +286,19 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hko-Uq-Jyc">
-                                <rect key="frame" x="0.0" y="427" width="375" height="31"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hko-Uq-Jyc">
+                                <rect key="frame" x="0.0" y="427" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Next Evolution: Venusaur Lvl 33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-HN-QNN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Evolution: Venusaur Lvl 33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-HN-QNN">
                                         <rect key="frame" x="0.0" y="5" width="375" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="aOl-S9-3ck"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="ygV-HN-QNN" firstAttribute="centerY" secondItem="Hko-Uq-Jyc" secondAttribute="centerY" id="25B-C1-ZCf"/>
-                                    <constraint firstAttribute="trailing" secondItem="ygV-HN-QNN" secondAttribute="trailing" id="Ubu-oN-Z8N"/>
-                                    <constraint firstAttribute="height" constant="31" id="k1a-qJ-euP"/>
-                                    <constraint firstItem="ygV-HN-QNN" firstAttribute="leading" secondItem="Hko-Uq-Jyc" secondAttribute="leading" id="mZY-9Z-J1h"/>
-                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="B77-Aj-7dd">
                                 <rect key="frame" x="194" y="486" width="120" height="120"/>
@@ -320,10 +313,9 @@
                         <constraints>
                             <constraint firstItem="HGR-1I-ceF" firstAttribute="top" secondItem="yAk-Kv-iy8" secondAttribute="top" id="Rar-eE-3oP"/>
                             <constraint firstItem="HGR-1I-ceF" firstAttribute="leading" secondItem="yAk-Kv-iy8" secondAttribute="leading" id="Rp5-I9-cU5"/>
-                            <constraint firstItem="Hko-Uq-Jyc" firstAttribute="leading" secondItem="yAk-Kv-iy8" secondAttribute="leading" id="XEx-kC-j8J"/>
                             <constraint firstItem="KJn-g1-7Bk" firstAttribute="leading" secondItem="yAk-Kv-iy8" secondAttribute="leadingMargin" id="bgX-rK-bYK"/>
+                            <constraint firstItem="KJn-g1-7Bk" firstAttribute="top" secondItem="HGR-1I-ceF" secondAttribute="bottom" constant="8" id="cvf-yr-QFt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KJn-g1-7Bk" secondAttribute="trailing" id="nxg-im-qox"/>
-                            <constraint firstAttribute="trailing" secondItem="Hko-Uq-Jyc" secondAttribute="trailing" id="oi5-jL-eum"/>
                             <constraint firstAttribute="trailing" secondItem="HGR-1I-ceF" secondAttribute="trailing" id="u9x-Cc-CEv"/>
                         </constraints>
                     </view>
