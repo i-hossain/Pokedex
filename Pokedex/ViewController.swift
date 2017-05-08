@@ -68,6 +68,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let pokemonObj: Pokemon!
+        
+        if searchMode {
+            pokemonObj = filteredPokemon[indexPath.row]
+        }
+        else {
+            pokemonObj = pokemon[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "PokemonDetailsVC", sender: pokemonObj)
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collection.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
@@ -89,20 +104,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if searchMode {
             return filteredPokemon.count
         }
         
         return pokemon.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -139,6 +150,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             musicPlayer.play()
             sender.alpha = 1.0
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailsVC" {
+            if let destination = segue.destination as? PokemonDetailsVC {
+                if let pokemonObj = sender as? Pokemon {
+                    destination.pokemon = pokemonObj
+                }
+            }
         }
     }
 
