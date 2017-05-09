@@ -10,11 +10,18 @@ import Foundation
 
 class Pokemon {
     
-    fileprivate var _name: String!
-    fileprivate var _pokedexID: Int!
+    private var _pokemonName: String!
+    private var _pokedexID: Int!
+    private var description: String!
+    private var pokemonType: String!
+    private var attack: String!
+    private var defense: String!
+    private var height: String!
+    private var weight: String!
+    private var nextEvolution: String!
     
     var name: String {
-        return _name
+        return _pokemonName
     }
     
     var pokedexID: Int {
@@ -22,7 +29,7 @@ class Pokemon {
     }
     
     init(name: String, pokedexID: Int) {
-        self._name = name.capitalized
+        self._pokemonName = name.capitalized
         self._pokedexID = pokedexID
     }
     
