@@ -39,5 +39,10 @@
 		<string>Pokemon Solid.tff</string>
 		<string>Pokemon Hollow.tff</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

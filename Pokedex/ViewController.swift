@@ -63,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 pokemon.append(pokemonObj)
             }
         } catch let error as NSError {
-            print(error)
+            print(error.debugDescription)
         }
 
     }

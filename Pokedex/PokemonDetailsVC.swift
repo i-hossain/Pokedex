@@ -32,7 +32,16 @@ class PokemonDetailsVC: UIViewController {
         super.viewDidLoad()
         
         pokemonNameLbl.text = pokemon.name
-
+        pokedexIDLbl.text = "\(pokemon.pokedexID)"
+        
+        pokemon.downloadInfo {
+            
+        }
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
