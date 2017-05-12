@@ -24,44 +24,6 @@ class Pokemon {
     internal private(set) var nextEvolutionID: String = ""
     internal private(set) var pokemonURL: String = ""
     
-//    var name: String {
-//        return _name
-//    }
-//    
-//    var pokedexID: Int {
-//        return _pokedexID
-//    }
-//    
-//    var description: String {
-//        if _description == nil {
-//            _description = ""
-//        }
-//        return _description
-//    }
-//    
-//    var type: String {
-//        return _type
-//    }
-//    
-//    var attack: String {
-//        return _attack
-//    }
-//    
-//    var defense: String {
-//        return _defense
-//    }
-//    
-//    var height: String {
-//        return _height
-//    }
-//    
-//    var weight: String {
-//        return _weight
-//    }
-//    
-//    var nextEvolution: String {
-//        return _nextEvolution
-//    }
     
     init(name: String, pokedexID: Int) {
         self.name = name.capitalized
@@ -132,22 +94,22 @@ class Pokemon {
                         
                         if nextEvolution.range(of: "mega") == nil {
                             self.nextEvolutionName = nextEvolution
+                            
+                            if let nextEvolutionURI = evolutions[0]["resource_uri"] as? String {
+                                let newString = nextEvolutionURI.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                let nextEvolutionID = newString.replacingOccurrences(of: "/", with: "")
+                                
+                                self.nextEvolutionID = nextEvolutionID
+                            }
+                            
+                            if let nextLevelExists = evolutions[0]["level"] {
+                                
+                                if let nextLevel = nextLevelExists as? Int {
+                                    self.nextEvolutionLvl = "\(nextLevel)"
+                                }
+                                
+                            }
                         }
-                    }
-                    
-                    if let nextEvolutionURI = evolutions[0]["resource_uri"] as? String {
-                        let newString = nextEvolutionURI.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
-                        let nextEvolutionID = newString.replacingOccurrences(of: "/", with: "")
-                        
-                        self.nextEvolutionID = nextEvolutionID
-                    }
-                    
-                    if let nextLevelExists = evolutions[0]["level"] {
-                        
-                        if let nextLevel = nextLevelExists as? Int {
-                            self.nextEvolutionLvl = "\(nextLevel)"
-                        }
-                        
                     }
                 }
             }
